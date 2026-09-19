@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chronos — History, in small discoveries</title>
-<meta name="description" content="Chronos is an iPhone app that tells the strangest true stories in history as short illustrated cards you can read in a minute. In English and Georgian.">
+<meta name="description" content="Chronos is an app for iPhone and Android that tells the strangest true stories in history as short illustrated cards you can read in a minute. In English and Georgian.">
 <meta name="theme-color" content="#F3ECDF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chronos — History, in small discoveries">
-<meta property="og:description" content="The strangest true stories in history, as short illustrated cards. For iPhone, in English and Georgian.">
+<meta property="og:description" content="The strangest true stories in history, as short illustrated cards. For iPhone and Android, in English and Georgian.">
 <meta property="og:image" content="https://factorylabs.app/chronos/assets/og-icon.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://factorylabs.app/chronos/">
@@ -102,19 +102,21 @@
 
     <div class="hero__inner">
       <div class="hero__copy reveal">
-        <p class="kicker kicker--light" data-i18n="hero_kicker">A history app for iPhone</p>
+        <p class="kicker kicker--light" data-i18n="hero_kicker">A history app for iPhone and Android</p>
         <h1 class="hero__title" data-i18n-html="hero_title">History, in <em>small</em> discoveries</h1>
         <p class="hero__lede" data-i18n="hero_lede">Chronos tells the strangest true stories that ever happened, as short illustrated cards you can read in a minute.</p>
         <div class="hero__cta">
-          <a class="store" data-store href="#download">
-            <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 7.5v9M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            <span class="store__text">
-              <small data-store-small data-i18n="store_small_soon">Coming soon to the</small>
-              <strong>App Store</strong>
-            </span>
+          <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6813354610" target="_blank" rel="noopener">
+            <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.64c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.27z"/></svg>
+            <span class="store__text"><small data-i18n="store_apple_small">Download on the</small><strong>App Store</strong></span>
           </a>
-          <a class="btn-ghost" href="#try" data-i18n="hero_secondary">Read a card</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.factorylabs.chronos" target="_blank" rel="noopener">
+            <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.3c-.3.3-.4.8-.4 1.3v16.8c0 .5.1 1 .4 1.3l.1.1 9.4-9.4v-.2L3.7 2.2z"/><path fill="#FFCE00" d="m16.2 15.5-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1z"/><path fill="#FF3A44" d="M16.3 15.4 13.1 12.3l-9.5 9.4c.4.4.9.4 1.6.1l11.1-6.4"/><path fill="#00F076" d="M16.3 9.2 5.2 2.8c-.7-.4-1.2-.3-1.6.1l9.5 9.4z"/></svg>
+            <span class="store__text"><small data-i18n="store_google_small">Get it on</small><strong>Google Play</strong></span>
+          </a>
         </div>
+                  </div>
         <ul class="hero__meta">
           <li data-i18n="meta_accounts">No account needed</li>
           <li data-i18n="meta_ads">No ads</li>
@@ -124,7 +126,7 @@
 
       <div class="hero__device reveal reveal--late">
         <div class="phone phone--hero">
-          <img src="assets/screens/feed.jpg" width="720" height="1575" alt="The Chronos home feed showing a card about Cleopatra and the Moon landing" data-i18n-alt="alt_feed">
+          <img src="assets/screens/feed.jpg" data-screen="feed" width="720" height="1570" alt="The Chronos home feed showing a card about Cleopatra and the Moon landing" data-i18n-alt="alt_feed">
         </div>
         <div class="float float--a"><span class="chip chip--success"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.8 1.3 2.2-.1.7 2.1 1.8 1.3-.7 2.1.7 2.1-1.8 1.3-.7 2.1-2.2-.1L8 15l-1.8-1.3-2.2.1-.7-2.1L1.5 10.4l.7-2.1-.7-2.1 1.8-1.3.7-2.1 2.2.1z" fill="currentColor"/><path d="M5.2 8.2l1.9 1.9 3.8-3.9" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="conf_confirmed">Confirmed fact</span></span></div>
         <div class="float float--b"><span class="chip"><span aria-hidden="true">🔥</span><span data-i18n="float_streak">12 day streak</span></span></div>
@@ -221,7 +223,7 @@
       </header>
 
       <article class="feature reveal">
-        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/feed.jpg" width="720" height="1575" alt="The home feed" data-i18n-alt="alt_feed_short"></div></div>
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/feed.jpg" data-screen="feed" width="720" height="1570" alt="The home feed" data-i18n-alt="alt_feed_short"></div></div>
         <div class="feature__copy">
           <p class="kicker" data-i18n="f1_kicker">Home</p>
           <h3 class="display display--m" data-i18n="f1_title">Your feed never ends</h3>
@@ -235,7 +237,7 @@
       </article>
 
       <article class="feature feature--flip reveal">
-        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/story.jpg" width="720" height="1575" alt="The story reader with three explanation depths" data-i18n-alt="alt_story"></div></div>
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/story.jpg" data-screen="story" width="720" height="1570" alt="The story reader with three explanation depths" data-i18n-alt="alt_story"></div></div>
         <div class="feature__copy">
           <p class="kicker" data-i18n="f2_kicker">Stories</p>
           <h3 class="display display--m" data-i18n-html="f2_title">Big stories, <em>as deep</em> as you like</h3>
@@ -249,7 +251,7 @@
       </article>
 
       <article class="feature reveal">
-        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/timeline.jpg" width="720" height="1575" alt="The interactive timeline" data-i18n-alt="alt_timeline"></div></div>
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/timeline.jpg" data-screen="timeline" width="720" height="1570" alt="The interactive timeline" data-i18n-alt="alt_timeline"></div></div>
         <div class="feature__copy">
           <p class="kicker" data-i18n="f3_kicker">Timeline</p>
           <h3 class="display display--m" data-i18n-html="f3_title">Scrub through <em>1.8 million</em> years</h3>
@@ -257,13 +259,13 @@
           <ul class="points">
             <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h18M6 9v6M12 7v10M18 9v6"/></svg></span><span data-i18n="f3_p1">Five eras, from the Ancient World to today</span></li>
             <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4H4v5M15 20h5v-5M4 4l6 6M20 20l-6-6"/></svg></span><span data-i18n="f3_p2">Pinch between eras, centuries and years</span></li>
-            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg></span><span data-i18n="f3_p3">Smooth at up to 120 Hz on ProMotion</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg></span><span data-i18n="f3_p3">Smooth at up to 120 Hz</span></li>
           </ul>
         </div>
       </article>
 
       <article class="feature feature--flip reveal">
-        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/map.jpg" width="720" height="1575" alt="The world map centered on the Caucasus" data-i18n-alt="alt_map"></div></div>
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/map.jpg" data-screen="map" width="720" height="1570" alt="The world map centered on the Caucasus" data-i18n-alt="alt_map"></div></div>
         <div class="feature__copy">
           <p class="kicker" data-i18n="f4_kicker">World map</p>
           <h3 class="display display--m" data-i18n-html="f4_title">Explore history <em>place by place</em></h3>
@@ -277,7 +279,7 @@
       </article>
 
       <article class="feature reveal">
-        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/profile.jpg" width="720" height="1575" alt="The profile with level, XP and streak" data-i18n-alt="alt_profile"></div></div>
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/profile.jpg" data-screen="profile" width="720" height="1570" alt="The profile with level, XP and streak" data-i18n-alt="alt_profile"></div></div>
         <div class="feature__copy">
           <p class="kicker" data-i18n="f5_kicker">Streaks and levels</p>
           <h3 class="display display--m" data-i18n-html="f5_title">Make history a <em>daily habit</em></h3>
@@ -361,7 +363,7 @@
       <div>
         <p class="kicker" data-i18n="privacy_kicker">Privacy</p>
         <h2 class="display display--m" data-i18n="privacy_title">No accounts. No ads. No tracking.</h2>
-        <p class="lede" data-i18n="privacy_text">Your progress, saved cards, streak and badges stay on your iPhone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.</p>
+        <p class="lede" data-i18n="privacy_text">Your progress, saved cards, streak and badges stay on your phone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.</p>
         <a class="link-arrow" href="privacy.html" data-i18n="privacy_link">Read the privacy policy</a>
       </div>
     </div>
@@ -373,14 +375,17 @@
     <div class="wrap finale__inner reveal">
       <img class="finale__icon" src="assets/icon-512.png" width="112" height="112" alt="Chronos app icon" data-i18n-alt="alt_icon">
       <h2 class="display" data-i18n-html="final_title">One surprising story, <em>every day</em></h2>
-      <p class="lede" data-i18n="final_text">Chronos is coming soon to the App Store, for iPhone with iOS 17 or later.</p>
-      <a class="store store--light" data-store href="#download">
-        <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 7.5v9M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <span class="store__text">
-          <small data-store-small data-i18n="store_small_soon">Coming soon to the</small>
-          <strong>App Store</strong>
-        </span>
-      </a>
+      <p class="lede" data-i18n="final_text">Chronos is on the App Store and Google Play, for iPhone and Android.</p>
+      <div class="stores stores--finale">
+          <a class="store" href="https://apps.apple.com/app/id6813354610" target="_blank" rel="noopener">
+            <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.64c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.15.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.27z"/></svg>
+            <span class="store__text"><small data-i18n="store_apple_small">Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.factorylabs.chronos" target="_blank" rel="noopener">
+            <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 2.3c-.3.3-.4.8-.4 1.3v16.8c0 .5.1 1 .4 1.3l.1.1 9.4-9.4v-.2L3.7 2.2z"/><path fill="#FFCE00" d="m16.2 15.5-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1z"/><path fill="#FF3A44" d="M16.3 15.4 13.1 12.3l-9.5 9.4c.4.4.9.4 1.6.1l11.1-6.4"/><path fill="#00F076" d="M16.3 9.2 5.2 2.8c-.7-.4-1.2-.3-1.6.1l9.5 9.4z"/></svg>
+            <span class="store__text"><small data-i18n="store_google_small">Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
     </div>
   </section>
 </main>
@@ -395,7 +400,7 @@
       <a href="privacy.html" data-i18n="footer_privacy">Privacy policy</a>
       <a href="mailto:factorylabsteam@gmail.com" data-i18n="footer_contact">Contact</a>
     </nav>
-    <p class="footer__legal"><span data-i18n="footer_copy">© 2026 Factory Labs</span> · <span data-i18n="footer_req">For iPhone · iOS 17 or later</span></p>
+    <p class="footer__legal"><span data-i18n="footer_copy">© 2026 Factory Labs</span> · <span data-i18n="footer_req">For iPhone and Android</span></p>
   </div>
 </footer>
 

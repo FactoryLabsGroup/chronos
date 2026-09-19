@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  // Set this once Chronos is live, and every store button turns into a real download link.
-  var APP_STORE_URL = '';
-
   var DATA = window.CHRONOS_DATA;
   var root = document.documentElement;
   root.classList.add('js');
@@ -17,12 +14,11 @@
       page_title: 'Chronos — History, in small discoveries',
       skip: 'Skip to content',
       nav_try: 'Try it', nav_features: 'Features', nav_topics: 'Topics', nav_privacy: 'Privacy',
-      hero_kicker: 'A history app for iPhone',
+      hero_kicker: 'A history app for iPhone and Android',
       hero_title: 'History, in <em>small</em> discoveries',
       hero_lede: 'Chronos tells the strangest true stories that ever happened, as short illustrated cards you can read in a minute.',
       hero_secondary: 'Read a card',
-      store_small_soon: 'Coming soon to the',
-      store_small_live: 'Download on the',
+      store_apple_small: 'Download on the', store_google_small: 'Get it on',
       meta_accounts: 'No account needed', meta_ads: 'No ads', meta_langs: 'English and Georgian',
       float_streak: '12 day streak', float_year: '30 BCE',
       alt_feed: 'The Chronos home feed showing a card about Cleopatra and the Moon landing',
@@ -57,7 +53,7 @@
       f2_p1: 'Three depths for every explanation', f2_p2: 'Meanwhile, elsewhere in the world', f2_p3: 'Sources named for every story',
       f3_kicker: 'Timeline', f3_title: 'Scrub through <em>1.8 million</em> years',
       f3_text: 'From the first humans at Dmanisi to the first website, every event sits on one ruler. Drag to travel, pinch to zoom from eras down to single years.',
-      f3_p1: 'Five eras, from the Ancient World to today', f3_p2: 'Pinch between eras, centuries and years', f3_p3: 'Smooth at up to 120 Hz on ProMotion',
+      f3_p1: 'Five eras, from the Ancient World to today', f3_p2: 'Pinch between eras, centuries and years', f3_p3: 'Smooth at up to 120 Hz',
       f4_kicker: 'World map', f4_title: 'Explore history <em>place by place</em>',
       f4_text: '59 regions and 84 civilizations on a map of the world. Tap a place to see who lived there, when, and the stories that happened there.',
       f4_p1: 'Civilizations on every continent', f4_p2: 'Stories tied to where they happened', f4_p3: "Keep track of the regions you've explored",
@@ -76,25 +72,23 @@
       geo_kicker: 'In English and Georgian', geo_title: 'From Dmanisi to <em>Queen Tamar</em>',
       geo_lede: "Every story, fact and date in Chronos is written in English and Georgian side by side. And Georgia's own history runs right through it.",
       privacy_kicker: 'Privacy', privacy_title: 'No accounts. No ads. No tracking.',
-      privacy_text: 'Your progress, saved cards, streak and badges stay on your iPhone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.',
+      privacy_text: 'Your progress, saved cards, streak and badges stay on your phone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.',
       privacy_link: 'Read the privacy policy',
       final_title: 'One surprising story, <em>every day</em>',
-      final_text: 'Chronos is coming soon to the App Store, for iPhone with iOS 17 or later.',
-      final_text_live: 'Chronos is on the App Store, for iPhone with iOS 17 or later.',
+      final_text: 'Chronos is on the App Store and Google Play, for iPhone and Android.',
       footer_privacy: 'Privacy policy', footer_contact: 'Contact', footer_copy: '© 2026 Factory Labs',
-      footer_req: 'For iPhone · iOS 17 or later',
+      footer_req: 'For iPhone and Android',
       year_bce: '%s BCE', year_ce: '%s CE', year_millions: '%s million years ago', year_thousands: '%s thousand years ago'
     },
     ka: {
       page_title: 'Chronos — ისტორია პატარა აღმოჩენებად',
       skip: 'შინაარსზე გადასვლა',
       nav_try: 'სცადეთ', nav_features: 'შესაძლებლობები', nav_topics: 'თემები', nav_privacy: 'კონფიდენციალურობა',
-      hero_kicker: 'ისტორიის აპი iPhone-ისთვის',
+      hero_kicker: 'ისტორიის აპი iPhone-სა და Android-ზე',
       hero_title: 'ისტორია <em>პატარა</em> აღმოჩენებად',
       hero_lede: 'Chronos ყველაზე უცნაურ ნამდვილ ამბებს მოკლე, ილუსტრირებულ ბარათებად გიყვებათ — თითოეული ერთ წუთში იკითხება.',
       hero_secondary: 'ბარათის წაკითხვა',
-      store_small_soon: 'მალე',
-      store_small_live: 'ჩამოტვირთეთ',
+      store_apple_small: 'ჩამოტვირთეთ', store_google_small: 'ჩამოტვირთეთ',
       meta_accounts: 'ანგარიში არ სჭირდება', meta_ads: 'რეკლამის გარეშე', meta_langs: 'ქართულად და ინგლისურად',
       float_streak: '12-დღიანი სერია', float_year: 'ძვ. წ. 30',
       alt_feed: 'Chronos-ის მთავარი ლენტა, ბარათი კლეოპატრასა და მთვარეზე დაშვების შესახებ',
@@ -129,7 +123,7 @@
       f2_p1: 'ახსნის სამი სიღრმე', f2_p2: 'ამასობაში, მსოფლიოს სხვა კუთხეში', f2_p3: 'წყაროები ყველა ისტორიისთვის',
       f3_kicker: 'ქრონოლოგია', f3_title: 'გადაათვალიერეთ <em>1.8 მილიონი</em> წელი',
       f3_text: 'დმანისის პირველი ადამიანებიდან პირველ ვებსაიტამდე ყველა მოვლენა ერთ სახაზავზეა. გადაათრიეთ სამოგზაუროდ, ორი თითით კი ეპოქებიდან ცალკეულ წლებამდე მიუახლოვდით.',
-      f3_p1: 'ხუთი ეპოქა — ძველი სამყაროდან დღემდე', f3_p2: 'მასშტაბი: ეპოქები, საუკუნეები, წლები', f3_p3: 'გლუვი მოძრაობა 120 ჰც-მდე ProMotion ეკრანზე',
+      f3_p1: 'ხუთი ეპოქა — ძველი სამყაროდან დღემდე', f3_p2: 'მასშტაბი: ეპოქები, საუკუნეები, წლები', f3_p3: 'გლუვი მოძრაობა 120 ჰც-მდე',
       f4_kicker: 'მსოფლიო რუკა', f4_title: 'აღმოაჩინეთ ისტორია <em>ადგილ-ადგილ</em>',
       f4_text: '59 რეგიონი და 84 ცივილიზაცია მსოფლიო რუკაზე. შეეხეთ ადგილს და ნახეთ, ვინ ცხოვრობდა იქ, როდის და რა ამბები მოხდა.',
       f4_p1: 'ცივილიზაციები ყველა კონტინენტზე', f4_p2: 'ისტორიები იმ ადგილებთან, სადაც მოხდა', f4_p3: 'აღრიცხეთ აღმოჩენილი რეგიონები',
@@ -148,13 +142,12 @@
       geo_kicker: 'ქართულად და ინგლისურად', geo_title: 'დმანისიდან <em>თამარ მეფემდე</em>',
       geo_lede: 'Chronos-ში ყოველი ისტორია, ფაქტი და თარიღი ქართულად და ინგლისურად ერთდროულად იწერება. და მასში საქართველოს ისტორიაც გადის.',
       privacy_kicker: 'კონფიდენციალურობა', privacy_title: 'ანგარიშის, რეკლამისა და თვალთვალის გარეშე',
-      privacy_text: 'თქვენი პროგრესი, შენახული ბარათები, სერია და ჯილდოები მხოლოდ თქვენს iPhone-ზე ინახება. Chronos-ის გასაუმჯობესებლად მხოლოდ ანონიმურ მონაცემებს ვაგროვებთ აპის გამოყენებისა და შეცდომების შესახებ და მათ არასდროს ვყიდით.',
+      privacy_text: 'თქვენი პროგრესი, შენახული ბარათები, სერია და ჯილდოები მხოლოდ თქვენს ტელეფონზე ინახება. Chronos-ის გასაუმჯობესებლად მხოლოდ ანონიმურ მონაცემებს ვაგროვებთ აპის გამოყენებისა და შეცდომების შესახებ და მათ არასდროს ვყიდით.',
       privacy_link: 'კონფიდენციალურობის პოლიტიკა',
       final_title: 'ერთი გასაოცარი ამბავი <em>ყოველდღე</em>',
-      final_text: 'Chronos მალე გამოჩნდება App Store-ში — iPhone-ისთვის, iOS 17 ან უფრო ახალი ვერსიით.',
-      final_text_live: 'Chronos უკვე App Store-შია — iPhone-ისთვის, iOS 17 ან უფრო ახალი ვერსიით.',
+      final_text: 'Chronos ხელმისაწვდომია App Store-სა და Google Play-ზე — iPhone-ისა და Android-ისთვის.',
       footer_privacy: 'კონფიდენციალურობის პოლიტიკა', footer_contact: 'კონტაქტი', footer_copy: '© 2026 Factory Labs',
-      footer_req: 'iPhone-ისთვის · iOS 17 ან უფრო ახალი',
+      footer_req: 'iPhone-ისა და Android-ისთვის',
       year_bce: 'ძვ. წ. %s', year_ce: 'ახ. წ. %s', year_millions: '%s მილიონი წლის წინ', year_thousands: '%s ათასი წლის წინ'
     }
   };
@@ -231,18 +224,10 @@
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-i18n-alt')); });
     document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
     document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
-    applyStore();
-  }
-
-  function applyStore() {
-    var live = !!APP_STORE_URL;
-    document.querySelectorAll('[data-store]').forEach(function (a) {
-      a.href = live ? APP_STORE_URL : '#download';
-      var small = a.querySelector('[data-store-small]');
-      if (small) small.textContent = t(live ? 'store_small_live' : 'store_small_soon');
+    // The app itself is bilingual, so the screenshots follow the reading language.
+    document.querySelectorAll('[data-screen]').forEach(function (img) {
+      img.src = 'assets/screens/' + (lang === 'ka' ? 'ka/' : '') + img.dataset.screen + '.jpg';
     });
-    var finalText = document.querySelector('[data-i18n="final_text"]');
-    if (finalText && live) finalText.textContent = t('final_text_live');
   }
 
   function setLanguage(next) {
