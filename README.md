@@ -2,7 +2,7 @@
 
 The landing page for [Chronos](https://github.com/FactoryLabsGroup/cronos-ios), the iPhone app that tells history as short illustrated cards.
 
-Live at **https://factorylabsgroup.github.io/Chronos-web/**
+Live at **https://factorylabs.app/chronos**
 
 A static site with no build step: `index.html`, `assets/styles.css`, `assets/app.js`, and `privacy.html` (the app's privacy policy).
 
