@@ -66,9 +66,8 @@
       privacy_text: 'Your progress, saved cards, streak and badges stay on your phone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.',
       privacy_link: 'Read the privacy policy',
       final_title: 'One surprising story, <em>every day</em>',
-      final_text: 'Chronos is on the App Store and Google Play, for iPhone and Android.',
-      footer_privacy: 'Privacy policy', footer_contact: 'Contact', footer_copy: '© 2026 Factory Labs',
-      footer_req: 'For iPhone and Android',
+      final_text: 'Chronos is on the App Store and Google Play.',
+      footer_privacy: 'Privacy policy', footer_support: 'Support', footer_copy: '© 2026 Factory Labs',
       year_bce: '%s BCE', year_ce: '%s CE', year_millions: '%s million years ago', year_thousands: '%s thousand years ago'
     },
     ka: {
@@ -127,9 +126,8 @@
       privacy_text: 'თქვენი პროგრესი, შენახული ბარათები, სერია და ჯილდოები მხოლოდ თქვენს ტელეფონზე ინახება. Chronos-ის გასაუმჯობესებლად მხოლოდ ანონიმურ მონაცემებს ვაგროვებთ აპის გამოყენებისა და შეცდომების შესახებ და მათ არასდროს ვყიდით.',
       privacy_link: 'კონფიდენციალურობის პოლიტიკა',
       final_title: 'ერთი გასაოცარი ამბავი <em>ყოველდღე</em>',
-      final_text: 'Chronos ხელმისაწვდომია App Store-სა და Google Play-ზე — iPhone-ისა და Android-ისთვის.',
-      footer_privacy: 'კონფიდენციალურობის პოლიტიკა', footer_contact: 'კონტაქტი', footer_copy: '© 2026 Factory Labs',
-      footer_req: 'iPhone-ისა და Android-ისთვის',
+      final_text: 'Chronos ხელმისაწვდომია App Store-სა და Google Play-ზე.',
+      footer_privacy: 'კონფიდენციალურობის პოლიტიკა', footer_support: 'მხარდაჭერა', footer_copy: '© 2026 Factory Labs',
       year_bce: 'ძვ. წ. %s', year_ce: 'ახ. წ. %s', year_millions: '%s მილიონი წლის წინ', year_thousands: '%s ათასი წლის წინ'
     }
   };
