@@ -13,7 +13,7 @@
     en: {
       page_title: 'Chronos — History, in small discoveries',
       skip: 'Skip to content',
-      nav_try: 'Try it', nav_features: 'Features', nav_topics: 'Topics', nav_privacy: 'Privacy',
+      nav_try: 'Try it', nav_features: 'Features', nav_privacy: 'Privacy',
       hero_kicker: 'A history app for iPhone and Android',
       hero_title: 'History, in <em>small</em> discoveries',
       hero_lede: 'Chronos tells the strangest true stories that ever happened, as short illustrated cards you can read in a minute.',
@@ -61,16 +61,7 @@
       f5_text: 'Chronos remembers what you read and what you keep, and brings the best of it back. Grow from Curious visitor to Keeper of time.',
       f5_p1: 'Read each day to keep a streak', f5_p2: 'Levels and badges mark the way', f5_p3: 'Saved cards wait on your shelf',
       lvl_1: 'Curious visitor', lvl_2: 'Explorer', lvl_3: 'Chronicler', lvl_4: 'Historian', lvl_5: 'Keeper of time',
-      honest_kicker: 'Honest history', honest_title: 'Every card says <em>how sure</em> we are',
-      honest_lede: 'History is full of great stories that never happened. Chronos labels each one, and names its sources.',
       conf_confirmed: 'Confirmed fact', conf_theory: 'Historical theory', conf_legend: 'Legend / disputed',
-      conf_confirmed_text: 'Supported by multiple reliable sources and broadly accepted by historians.',
-      conf_theory_text: 'The event is real, but historians still debate its causes, scale, or details.',
-      conf_legend_text: 'A story reported by contemporaries or later writers that cannot be fully verified.',
-      topics_kicker: '12 topics · 5 eras', topics_title: 'Pick a thread and <em>pull</em>',
-      topics_lede: 'Narrow the feed to one topic and it deals an endless stream from that topic alone.',
-      geo_kicker: 'In English and Georgian', geo_title: 'From Dmanisi to <em>Queen Tamar</em>',
-      geo_lede: "Every story, fact and date in Chronos is written in English and Georgian side by side. And Georgia's own history runs right through it.",
       privacy_kicker: 'Privacy', privacy_title: 'No accounts. No ads. No tracking.',
       privacy_text: 'Your progress, saved cards, streak and badges stay on your phone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.',
       privacy_link: 'Read the privacy policy',
@@ -83,7 +74,7 @@
     ka: {
       page_title: 'Chronos — ისტორია პატარა აღმოჩენებად',
       skip: 'შინაარსზე გადასვლა',
-      nav_try: 'სცადეთ', nav_features: 'შესაძლებლობები', nav_topics: 'თემები', nav_privacy: 'კონფიდენციალურობა',
+      nav_try: 'სცადეთ', nav_features: 'შესაძლებლობები', nav_privacy: 'კონფიდენციალურობა',
       hero_kicker: 'ისტორიის აპი iPhone-სა და Android-ზე',
       hero_title: 'ისტორია <em>პატარა</em> აღმოჩენებად',
       hero_lede: 'Chronos ყველაზე უცნაურ ნამდვილ ამბებს მოკლე, ილუსტრირებულ ბარათებად გიყვებათ — თითოეული ერთ წუთში იკითხება.',
@@ -131,16 +122,7 @@
       f5_text: 'Chronos იმახსოვრებს, რასაც კითხულობთ და რასაც ინახავთ, და საუკეთესოს ისევ შემოგთავაზებთ. ცნობისმოყვარე სტუმრიდან დროის მცველამდე.',
       f5_p1: 'ყოველდღე წაიკითხეთ — სერია გრძელდება', f5_p2: 'დონეები და ჯილდოები — გავლილი გზა', f5_p3: 'შენახული ბარათები თაროზე გელოდებათ',
       lvl_1: 'ცნობისმოყვარე სტუმარი', lvl_2: 'მკვლევარი', lvl_3: 'მემატიანე', lvl_4: 'ისტორიკოსი', lvl_5: 'დროის მცველი',
-      honest_kicker: 'პატიოსანი ისტორია', honest_title: 'ყოველი ბარათი გეუბნებათ, <em>რამდენად</em> დარწმუნებულები ვართ',
-      honest_lede: 'ისტორია სავსეა კარგი ამბებით, რომლებიც არასდროს მომხდარა. Chronos თითოეულს შესაბამისად აღნიშნავს და წყაროებს ასახელებს.',
       conf_confirmed: 'დადასტურებული ფაქტი', conf_theory: 'ისტორიული თეორია', conf_legend: 'ლეგენდა / სადავო',
-      conf_confirmed_text: 'დასტურდება რამდენიმე სანდო წყაროთი და ისტორიკოსების უმეტესობა აღიარებს.',
-      conf_theory_text: 'მოვლენა ნამდვილია, მაგრამ ისტორიკოსები ჯერ კიდევ კამათობენ მის მიზეზებზე, მასშტაბსა და დეტალებზე.',
-      conf_legend_text: 'ამბავი, რომელსაც თანამედროვეები ან გვიანდელი ავტორები გადმოგვცემენ და რომლის სრულად დადასტურება შეუძლებელია.',
-      topics_kicker: '12 თემა · 5 ეპოქა', topics_title: 'აირჩიეთ თემა და <em>ჩაუღრმავდით</em>',
-      topics_lede: 'ლენტა ერთ თემაზე დაავიწროვეთ და ის მხოლოდ ამ თემის ბარათებს შემოგთავაზებთ — დაუსრულებლად.',
-      geo_kicker: 'ქართულად და ინგლისურად', geo_title: 'დმანისიდან <em>თამარ მეფემდე</em>',
-      geo_lede: 'Chronos-ში ყოველი ისტორია, ფაქტი და თარიღი ქართულად და ინგლისურად ერთდროულად იწერება. და მასში საქართველოს ისტორიაც გადის.',
       privacy_kicker: 'კონფიდენციალურობა', privacy_title: 'ანგარიშის, რეკლამისა და თვალთვალის გარეშე',
       privacy_text: 'თქვენი პროგრესი, შენახული ბარათები, სერია და ჯილდოები მხოლოდ თქვენს ტელეფონზე ინახება. Chronos-ის გასაუმჯობესებლად მხოლოდ ანონიმურ მონაცემებს ვაგროვებთ აპის გამოყენებისა და შეცდომების შესახებ და მათ არასდროს ვყიდით.',
       privacy_link: 'კონფიდენციალურობის პოლიტიკა',
@@ -166,13 +148,6 @@
     ['moneyAndTrade', '💰', '#B08A2A', 'Money and Trade', 'ფული და ვაჭრობა', 'Follow the gold', 'მიჰყევით ოქროს'],
     ['citiesAndEmpires', '🏙️', '#8A5A3A', 'Cities and Empires', 'ქალაქები და იმპერიები', 'Rise and fall', 'აღზევება და დაცემა'],
     ['modernHistory', '🚀', '#3D4F6B', 'Modern History', 'თანამედროვე ისტორია', 'The world we live in', 'სამყარო, რომელშიც ვცხოვრობთ']
-  ];
-  var ERAS = [
-    ['🏺', '#C08A3E', 'Ancient World', 'ძველი სამყარო'],
-    ['🏰', '#7A4A8E', 'Middle Ages', 'შუა საუკუნეები'],
-    ['🎭', '#B85C6A', 'Renaissance', 'რენესანსი'],
-    ['⚙️', '#4A6B8A', 'Industrial Age', 'ინდუსტრიული ეპოქა'],
-    ['🚀', '#3D7A6E', 'Modern Era', 'თანამედროვე ეპოქა']
   ];
   var categoryById = {};
   CATEGORIES.forEach(function (c) { categoryById[c[0]] = c; });
@@ -431,41 +406,10 @@
     }
   });
 
-  // ---------------------------------------------------------------------------
-  // Topics, eras, Georgia
-  // ---------------------------------------------------------------------------
-  function renderTopics() {
-    document.getElementById('topicGrid').innerHTML = CATEGORIES.map(function (c) {
-      return '<div class="topic reveal is-in" style="--tint:' + c[2] + '">' +
-        '<span class="topic__emoji" aria-hidden="true">' + c[1] + '</span>' +
-        '<h3>' + esc(lang === 'ka' ? c[4] : c[3]) + '</h3><p>' + esc(lang === 'ka' ? c[6] : c[5]) + '</p></div>';
-    }).join('');
-    document.getElementById('eraRow').innerHTML = ERAS.map(function (e) {
-      return '<span class="era" style="--tint:' + e[1] + '"><span class="era__icon" aria-hidden="true">' + e[0] + '</span>' + esc(lang === 'ka' ? e[3] : e[2]) + '</span>';
-    }).join('');
-  }
-
-  function renderGeorgia() {
-    document.getElementById('geoGrid').innerHTML = DATA.georgia.map(function (f) {
-      return '<article class="geo__card reveal is-in"><span class="geo__year">' + esc(yearLabel(f.year)) + '</span>' +
-        '<h3>' + esc(pick(f.hook)) + '</h3><p>' + esc(pick(f.text)) + '</p></article>';
-    }).join('');
-  }
-
-  function renderExamples() {
-    document.querySelectorAll('[data-fact]').forEach(function (el) {
-      var f = DATA.deck.filter(function (x) { return x.id === el.dataset.fact; })[0];
-      if (f) el.innerHTML = '<span>' + esc(yearLabel(f.year)) + '</span>' + esc(pick(f.hook));
-    });
-  }
-
   function renderAll() {
     applyStrings();
-    renderExamples();
     renderDeck();
     renderReader();
-    renderTopics();
-    renderGeorgia();
   }
 
   // ---------------------------------------------------------------------------

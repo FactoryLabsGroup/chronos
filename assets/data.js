@@ -182,68 +182,6 @@ window.CHRONOS_DATA = {
    "source": "Krakatoa: The Day the World Exploded · Simon Winchester"
   }
  ],
- "georgia": [
-  {
-   "id": "f-dmanisi",
-   "hook": {
-    "en": "The oldest human remains outside Africa lie under a medieval Georgian town.",
-    "ka": "აფრიკის გარეთ უძველესი ადამიანის ნაშთები შუა საუკუნეების ქართული ქალაქის ქვეშ დევს."
-   },
-   "text": {
-    "en": "Fossils at Dmanisi date to about 1.8 million years ago. Their small brains overturned the idea that early humans needed big brains to leave Africa.",
-    "ka": "დმანისის ნამარხები დაახლოებით 1,8 მილიონი წლის წინ თარიღდება. მათმა პატარა ტვინებმა იდეა შეცვალა, რომ ადრეულ ადამიანებს აფრიკის დასატოვებლად დიდი ტვინები სჭირდებოდათ."
-   },
-   "year": -1800000,
-   "cat": "science",
-   "conf": "confirmed",
-   "source": "Dmanisi · Georgian National Museum"
-  },
-  {
-   "id": "f-wine",
-   "hook": {
-    "en": "The oldest wine on Earth was made in Georgia 8,000 years ago.",
-    "ka": "დედამიწაზე უძველესი ღვინო საქართველოში 8 000 წლის წინ დამზადდა."
-   },
-   "text": {
-    "en": "Residues of tartaric acid in Neolithic pottery from Gadachrili Gora date to about 6000 BCE. Georgians still ferment wine in buried clay qvevri.",
-    "ka": "გადაჭრილი გორის ნეოლითურ კერამიკაში ღვინის მჟავის ნაშთები დაახლოებით ძვ. წ. 6000 წლით თარიღდება. ქართველები ღვინოს დღემდე ჩამარხულ თიხის ქვევრში ადუღებენ."
-   },
-   "year": -6000,
-   "cat": "ancientCivilizations",
-   "conf": "confirmed",
-   "source": "Early Neolithic wine of Georgia in the South Caucasus, PNAS · Patrick McGovern and others"
-  },
-  {
-   "id": "f-tamar-king",
-   "hook": {
-    "en": "Georgia's Queen Tamar held the title 'King of Kings'.",
-    "ka": "საქართველოს თამარ მეფე „მეფეთ-მეფის“ ტიტულს ატარებდა."
-   },
-   "text": {
-    "en": "Georgian reserves dedopali, queen, for a king's wife. Tamar, who ruled in her own right from 1184 to 1213, was called mepe, king.",
-    "ka": "ქართული ენა სიტყვა „დედოფალს“ მეფის ცოლისთვის იტოვებს. თამარს, რომელიც 1184-დან 1213 წლამდე საკუთარი უფლებით მართავდა, მეფეს უწოდებდნენ."
-   },
-   "year": 1184,
-   "cat": "kingsAndQueens",
-   "conf": "confirmed",
-   "source": "Tamar · Encyclopaedia Britannica"
-  },
-  {
-   "id": "f-vardzia",
-   "hook": {
-    "en": "A Georgian queen built a 13-storey city inside a cliff.",
-    "ka": "ქართველმა დედოფალმა კლდის შიგნით 13-სართულიანი ქალაქი ააშენა."
-   },
-   "text": {
-    "en": "Vardzia, carved into the Erusheti mountain under Queen Tamar in the 1180s, held some 600 rooms, a church, wine cellars and irrigation, mostly hidden from invaders.",
-    "ka": "ვარძია, 1180-იან წლებში თამარ მეფის დროს ერუშეთის მთაში ამოკვეთილი, დაახლოებით 600 ოთახს, ეკლესიას, მარნებსა და საირიგაციო სისტემას ინახავდა, უმეტესად დამპყრობლებისგან დამალული."
-   },
-   "year": 1185,
-   "cat": "citiesAndEmpires",
-   "conf": "confirmed",
-   "source": "Vardzia · National Agency for Cultural Heritage Preservation of Georgia"
-  }
- ],
  "story": {
   "title": {
    "en": "The War Australia Lost to Birds",
