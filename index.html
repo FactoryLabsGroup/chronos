@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chronos — History, in small discoveries</title>
+<meta name="description" content="Chronos is an iPhone app that tells the strangest true stories in history as short illustrated cards you can read in a minute. In English and Georgian.">
+<meta name="theme-color" content="#F3ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chronos — History, in small discoveries">
+<meta property="og:description" content="The strangest true stories in history, as short illustrated cards. For iPhone, in English and Georgian.">
+<meta property="og:image" content="https://factorylabsgroup.github.io/Chronos-web/assets/og-icon.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&family=Noto+Serif+Georgian:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+  // Decide the language before the first paint, so a Georgian reader never sees English flash by.
+  (function () {
+    var lang = null;
+    try { lang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('chronos.lang'); } catch (e) {}
+    if (lang !== 'ka' && lang !== 'en') {
+      var prefs = navigator.languages || [navigator.language || 'en'];
+      lang = prefs.some(function (l) { return /^ka\b/i.test(l); }) ? 'ka' : 'en';
+    }
+    document.documentElement.lang = lang;
+    if (lang !== 'en') document.documentElement.classList.add('i18n-pending');
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Chronos">
+      <img src="assets/favicon.png" alt="" width="32" height="32">
+      <span>Chronos</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#try" data-i18n="nav_try">Try it</a>
+      <a href="#features" data-i18n="nav_features">Features</a>
+      <a href="#topics" data-i18n="nav_topics">Topics</a>
+      <a href="#privacy" data-i18n="nav_privacy">Privacy</a>
+    </nav>
+    <div class="nav__actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ka" lang="ka">ქარ</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero: the night sky from the app icon -->
+  <section class="hero" id="top">
+    <div class="sky" aria-hidden="true">
+      <div class="sky__stars" id="stars"></div>
+      <svg class="sky__moon" viewBox="0 0 200 200">
+        <defs>
+          <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F6E7C5" stop-opacity=".35"/>
+            <stop offset="100%" stop-color="#F6E7C5" stop-opacity="0"/>
+          </radialGradient>
+          <mask id="crescent">
+            <rect width="200" height="200" fill="#fff"/>
+            <circle cx="122" cy="82" r="46" fill="#000"/>
+          </mask>
+        </defs>
+        <circle cx="100" cy="100" r="100" fill="url(#moonGlow)"/>
+        <circle cx="100" cy="100" r="52" fill="#F6E7C5" mask="url(#crescent)"/>
+      </svg>
+      <svg class="sky__rocket" viewBox="0 0 60 120">
+        <path d="M30 4c14 14 18 38 14 66H16C12 42 16 18 30 4z" fill="#F4E6CC"/>
+        <path d="M16 62 4 84l14-4zM44 62l12 22-14-4z" fill="#D9C39A"/>
+        <circle cx="30" cy="40" r="6" fill="#1E2B48" stroke="#C9A36A" stroke-width="3"/>
+        <path class="flame" d="M19 72h22c0 18-6 30-11 40-5-10-11-22-11-40z" fill="url(#flameGrad)"/>
+        <defs>
+          <linearGradient id="flameGrad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#FFD58A"/><stop offset="1" stop-color="#F0782E"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg class="sky__land" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice">
+        <path d="M250 330 520 60 610 330z" fill="#6E4431"/>
+        <path d="M520 60 780 330H610z" fill="#C98A58"/>
+        <path d="M760 330 930 150 990 330z" fill="#6E4431" opacity=".9"/>
+        <path d="M930 150 1100 330H990z" fill="#B97C4F" opacity=".95"/>
+        <path d="M0 320c240-26 520-30 760-18 260 14 480 8 680-20v78H0z" fill="#A86E43"/>
+        <path d="M0 340c300-14 620-10 900 0 220 8 400 2 540-8v28H0z" fill="#8C5634"/>
+      </svg>
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__copy reveal">
+        <p class="kicker kicker--light" data-i18n="hero_kicker">A history app for iPhone</p>
+        <h1 class="hero__title" data-i18n-html="hero_title">History, in <em>small</em> discoveries</h1>
+        <p class="hero__lede" data-i18n="hero_lede">Chronos tells the strangest true stories that ever happened, as short illustrated cards you can read in a minute.</p>
+        <div class="hero__cta">
+          <a class="store" data-store href="#download">
+            <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 7.5v9M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span class="store__text">
+              <small data-store-small data-i18n="store_small_soon">Coming soon to the</small>
+              <strong>App Store</strong>
+            </span>
+          </a>
+          <a class="btn-ghost" href="#try" data-i18n="hero_secondary">Read a card</a>
+        </div>
+        <ul class="hero__meta">
+          <li data-i18n="meta_accounts">No account needed</li>
+          <li data-i18n="meta_ads">No ads</li>
+          <li data-i18n="meta_langs">English and Georgian</li>
+        </ul>
+      </div>
+
+      <div class="hero__device reveal reveal--late">
+        <div class="phone phone--hero">
+          <img src="assets/screens/feed.jpg" width="720" height="1575" alt="The Chronos home feed showing a card about Cleopatra and the Moon landing" data-i18n-alt="alt_feed">
+        </div>
+        <div class="float float--a"><span class="chip chip--success"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.8 1.3 2.2-.1.7 2.1 1.8 1.3-.7 2.1.7 2.1-1.8 1.3-.7 2.1-2.2-.1L8 15l-1.8-1.3-2.2.1-.7-2.1L1.5 10.4l.7-2.1-.7-2.1 1.8-1.3.7-2.1 2.2.1z" fill="currentColor"/><path d="M5.2 8.2l1.9 1.9 3.8-3.9" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="conf_confirmed">Confirmed fact</span></span></div>
+        <div class="float float--b"><span class="chip"><span aria-hidden="true">🔥</span><span data-i18n="float_streak">12 day streak</span></span></div>
+        <div class="float float--c"><span class="chip chip--serif"><span aria-hidden="true">🏺</span><span data-i18n="float_year">30 BCE</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numbers -->
+  <section class="stats" aria-label="Chronos in numbers">
+    <div class="wrap stats__grid">
+      <div class="stat reveal"><strong data-count="75">75</strong><span data-i18n="stat_stories">illustrated stories</span></div>
+      <div class="stat reveal"><strong data-count="98">98</strong><span data-i18n="stat_facts">“wait, what?” facts</span></div>
+      <div class="stat reveal"><strong data-count="150" data-suffix="+">150+</strong><span data-i18n="stat_events">events on the timeline</span></div>
+      <div class="stat reveal"><strong data-count="59">59</strong><span data-i18n="stat_regions">regions on the map</span></div>
+      <div class="stat reveal"><strong data-count="84">84</strong><span data-i18n="stat_civs">civilizations</span></div>
+    </div>
+  </section>
+
+  <!-- Interactive deck -->
+  <section class="section" id="try">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="kicker" data-i18n="try_kicker">Wait, what?</p>
+        <h2 class="display" data-i18n-html="try_title">Swipe into <em>surprising</em> history</h2>
+        <p class="lede" data-i18n="try_lede">A new card with every swipe: the date, the subject, and the part you didn't know. These are real cards from the app — try a few.</p>
+      </header>
+
+      <div class="deck reveal" id="deck">
+        <div class="deck__stage" id="deckStage" aria-live="polite"></div>
+        <div class="deck__controls">
+          <button class="round" type="button" id="deckPrev" aria-label="Previous card" data-i18n-aria="deck_prev">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="deck__dots" id="deckDots" role="tablist"></div>
+          <button class="round round--primary" type="button" id="deckNext" aria-label="Next card" data-i18n-aria="deck_next">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="deck__hint" data-i18n="deck_hint">Swipe, use the arrows, or press ← →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story demo -->
+  <section class="section section--tint" id="story">
+    <div class="wrap split">
+      <div class="split__copy reveal">
+        <p class="kicker" data-i18n="story_kicker">Read deeper</p>
+        <h2 class="display" data-i18n-html="story_title">Guess first. <em>Then</em> find out.</h2>
+        <p class="lede" data-i18n="story_lede">Every story asks what you think before it tells you. Then it unfolds card by card, and you choose how deep the explanation goes.</p>
+        <ul class="ticks">
+          <li data-i18n="story_tick_1">A prediction before every reveal</li>
+          <li data-i18n="story_tick_2">Three depths: Like I'm 10, Normal, Go deeper</li>
+          <li data-i18n="story_tick_3">“Meanwhile”: what else was happening that year</li>
+        </ul>
+      </div>
+
+      <div class="reader reveal reveal--late" id="reader">
+        <div class="reader__art" aria-hidden="true">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="dusk" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#E9A46A"/><stop offset=".7" stop-color="#D9774A"/><stop offset="1" stop-color="#B55A36"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="170" fill="url(#dusk)"/>
+            <circle cx="96" cy="46" r="24" fill="#F7D9A0" opacity=".9"/>
+            <path d="M0 108c80-10 170-12 260-6s110 2 140-4v72H0z" fill="#9B4A2C"/>
+            <path d="M0 126c120-8 240-8 400 0v44H0z" fill="#7C3A22"/>
+            <g class="emu" fill="#3A1E14">
+              <ellipse cx="120" cy="120" rx="22" ry="14"/><path d="M134 112c4-18 6-34 10-44" stroke="#3A1E14" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="146" cy="66" r="6"/><path d="M151 66l8 2-8 2z"/><path d="M114 132l-4 22M126 132l4 22" stroke="#3A1E14" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g class="emu emu--2" fill="#3A1E14" transform="translate(130 8) scale(.8)">
+              <ellipse cx="120" cy="120" rx="22" ry="14"/><path d="M134 112c4-18 6-34 10-44" stroke="#3A1E14" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="146" cy="66" r="6"/><path d="M151 66l8 2-8 2z"/><path d="M114 132l-4 22M126 132l4 22" stroke="#3A1E14" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g class="emu emu--3" fill="#3A1E14" transform="translate(222 20) scale(.62)">
+              <ellipse cx="120" cy="120" rx="22" ry="14"/><path d="M134 112c4-18 6-34 10-44" stroke="#3A1E14" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="146" cy="66" r="6"/><path d="M151 66l8 2-8 2z"/><path d="M114 132l-4 22M126 132l4 22" stroke="#3A1E14" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </svg>
+          <div class="reader__progress"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="reader__body" id="readerBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="kicker" data-i18n="features_kicker">Inside the app</p>
+        <h2 class="display" data-i18n-html="features_title">Five ways into <em>the past</em></h2>
+      </header>
+
+      <article class="feature reveal">
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/feed.jpg" width="720" height="1575" alt="The home feed" data-i18n-alt="alt_feed_short"></div></div>
+        <div class="feature__copy">
+          <p class="kicker" data-i18n="f1_kicker">Home</p>
+          <h3 class="display display--m" data-i18n="f1_title">Your feed never ends</h3>
+          <p class="lede" data-i18n="f1_text">Roughly two quick facts for every story, dealt so the subject keeps changing and nothing you've seen comes back while something new is waiting.</p>
+          <ul class="points">
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6" /></svg></span><span data-i18n="f1_p1">Swipe up for the next card</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6.5C6.5 5 9.5 5 12 6.5 14.5 5 17.5 5 20 6.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0z M12 6.5V19"/></svg></span><span data-i18n="f1_p2">Tap to read the whole story</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10v16l-5-4-5 4z"/></svg></span><span data-i18n="f1_p3">Bookmark anything worth keeping</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature feature--flip reveal">
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/story.jpg" width="720" height="1575" alt="The story reader with three explanation depths" data-i18n-alt="alt_story"></div></div>
+        <div class="feature__copy">
+          <p class="kicker" data-i18n="f2_kicker">Stories</p>
+          <h3 class="display display--m" data-i18n-html="f2_title">Big stories, <em>as deep</em> as you like</h3>
+          <p class="lede" data-i18n="f2_text">Full story opens a short illustrated read: a question first, the answer after, then who, when and where, and what was happening elsewhere in the world at the same time.</p>
+          <ul class="points">
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h6"/></svg></span><span data-i18n="f2_p1">Three depths for every explanation</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.5 2.5 3.5 5 3.5 8s-1 5.5-3.5 8c-2.5-2.5-3.5-5-3.5-8s1-5.5 3.5-8z"/></svg></span><span data-i18n="f2_p2">Meanwhile, elsewhere in the world</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z M9 10h6M9 14h6M9 18h4"/></svg></span><span data-i18n="f2_p3">Sources named for every story</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature reveal">
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/timeline.jpg" width="720" height="1575" alt="The interactive timeline" data-i18n-alt="alt_timeline"></div></div>
+        <div class="feature__copy">
+          <p class="kicker" data-i18n="f3_kicker">Timeline</p>
+          <h3 class="display display--m" data-i18n-html="f3_title">Scrub through <em>1.8 million</em> years</h3>
+          <p class="lede" data-i18n="f3_text">From the first humans at Dmanisi to the first website, every event sits on one ruler. Drag to travel, pinch to zoom from eras down to single years.</p>
+          <ul class="points">
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h18M6 9v6M12 7v10M18 9v6"/></svg></span><span data-i18n="f3_p1">Five eras, from the Ancient World to today</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4H4v5M15 20h5v-5M4 4l6 6M20 20l-6-6"/></svg></span><span data-i18n="f3_p2">Pinch between eras, centuries and years</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg></span><span data-i18n="f3_p3">Smooth at up to 120 Hz on ProMotion</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature feature--flip reveal">
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/map.jpg" width="720" height="1575" alt="The world map centered on the Caucasus" data-i18n-alt="alt_map"></div></div>
+        <div class="feature__copy">
+          <p class="kicker" data-i18n="f4_kicker">World map</p>
+          <h3 class="display display--m" data-i18n-html="f4_title">Explore history <em>place by place</em></h3>
+          <p class="lede" data-i18n="f4_text">59 regions and 84 civilizations on a map of the world. Tap a place to see who lived there, when, and the stories that happened there.</p>
+          <ul class="points">
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></span><span data-i18n="f4_p1">Civilizations on every continent</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10M9 20v-6h6v6"/></svg></span><span data-i18n="f4_p2">Stories tied to where they happened</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14M15 6v14"/></svg></span><span data-i18n="f4_p3">Keep track of the regions you've explored</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature reveal">
+        <div class="feature__device"><div class="phone"><img loading="lazy" src="assets/screens/profile.jpg" width="720" height="1575" alt="The profile with level, XP and streak" data-i18n-alt="alt_profile"></div></div>
+        <div class="feature__copy">
+          <p class="kicker" data-i18n="f5_kicker">Streaks and levels</p>
+          <h3 class="display display--m" data-i18n-html="f5_title">Make history a <em>daily habit</em></h3>
+          <p class="lede" data-i18n="f5_text">Chronos remembers what you read and what you keep, and brings the best of it back. Grow from Curious visitor to Keeper of time.</p>
+          <ul class="points">
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-3.5 2-5 1 1 1.5 2 1.5 3 1.5-2 1.5-5 1.5-8z"/></svg></span><span data-i18n="f5_p1">Read each day to keep a streak</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"/></svg></span><span data-i18n="f5_p2">Levels and badges mark the way</span></li>
+            <li><span class="points__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z M4 9h16M9 9v11"/></svg></span><span data-i18n="f5_p3">Saved cards wait on your shelf</span></li>
+          </ul>
+          <ol class="ladder" aria-label="Levels">
+            <li data-i18n="lvl_1">Curious visitor</li>
+            <li data-i18n="lvl_2">Explorer</li>
+            <li data-i18n="lvl_3">Chronicler</li>
+            <li data-i18n="lvl_4">Historian</li>
+            <li data-i18n="lvl_5">Keeper of time</li>
+          </ol>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Honesty -->
+  <section class="section section--tint" id="honest">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="kicker" data-i18n="honest_kicker">Honest history</p>
+        <h2 class="display" data-i18n-html="honest_title">Every card says <em>how sure</em> we are</h2>
+        <p class="lede" data-i18n="honest_lede">History is full of great stories that never happened. Chronos labels each one, and names its sources.</p>
+      </header>
+      <div class="truth">
+        <div class="truth__card reveal">
+          <span class="chip chip--success" data-i18n="conf_confirmed">Confirmed fact</span>
+          <p data-i18n="conf_confirmed_text">Supported by multiple reliable sources and broadly accepted by historians.</p>
+          <blockquote class="truth__example" data-fact="f-oxford"></blockquote>
+        </div>
+        <div class="truth__card reveal">
+          <span class="chip chip--theory" data-i18n="conf_theory">Historical theory</span>
+          <p data-i18n="conf_theory_text">The event is real, but historians still debate its causes, scale, or details.</p>
+          <blockquote class="truth__example" data-fact="f-dancing"></blockquote>
+        </div>
+        <div class="truth__card reveal">
+          <span class="chip chip--legend" data-i18n="conf_legend">Legend / disputed</span>
+          <p data-i18n="conf_legend_text">A story reported by contemporaries or later writers that cannot be fully verified.</p>
+          <blockquote class="truth__example" data-fact="f-caesar-pirates"></blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="section" id="topics">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="kicker" data-i18n="topics_kicker">12 topics · 5 eras</p>
+        <h2 class="display" data-i18n-html="topics_title">Pick a thread and <em>pull</em></h2>
+        <p class="lede" data-i18n="topics_lede">Narrow the feed to one topic and it deals an endless stream from that topic alone.</p>
+      </header>
+      <div class="topics" id="topicGrid"></div>
+      <div class="eras reveal" id="eraRow"></div>
+    </div>
+  </section>
+
+  <!-- Georgia -->
+  <section class="section georgia" id="georgia">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="kicker kicker--light" data-i18n="geo_kicker">In English and Georgian</p>
+        <h2 class="display" data-i18n-html="geo_title">From Dmanisi to <em>Queen Tamar</em></h2>
+        <p class="lede" data-i18n="geo_lede">Every story, fact and date in Chronos is written in English and Georgian side by side. And Georgia's own history runs right through it.</p>
+      </header>
+      <div class="geo" id="geoGrid"></div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="section" id="privacy">
+    <div class="wrap privacy reveal">
+      <div class="privacy__seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M32 6l20 8v15c0 13-8.5 23-20 29C20.5 52 12 42 12 29V14z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M23 32l6.5 6.5L42 26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="kicker" data-i18n="privacy_kicker">Privacy</p>
+        <h2 class="display display--m" data-i18n="privacy_title">No accounts. No ads. No tracking.</h2>
+        <p class="lede" data-i18n="privacy_text">Your progress, saved cards, streak and badges stay on your iPhone. We collect only anonymous usage and crash information to make Chronos better, and we never sell it.</p>
+        <a class="link-arrow" href="privacy.html" data-i18n="privacy_link">Read the privacy policy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final call -->
+  <section class="finale" id="download">
+    <div class="finale__stars" id="stars2" aria-hidden="true"></div>
+    <div class="wrap finale__inner reveal">
+      <img class="finale__icon" src="assets/icon-512.png" width="112" height="112" alt="Chronos app icon" data-i18n-alt="alt_icon">
+      <h2 class="display" data-i18n-html="final_title">One surprising story, <em>every day</em></h2>
+      <p class="lede" data-i18n="final_text">Chronos is coming soon to the App Store, for iPhone with iOS 17 or later.</p>
+      <a class="store store--light" data-store href="#download">
+        <svg class="store__glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 7.5v9M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="store__text">
+          <small data-store-small data-i18n="store_small_soon">Coming soon to the</small>
+          <strong>App Store</strong>
+        </span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="brand brand--footer">
+      <img src="assets/favicon.png" alt="" width="28" height="28">
+      <span>Chronos</span>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="privacy.html" data-i18n="footer_privacy">Privacy policy</a>
+      <a href="mailto:factorylabsteam@gmail.com" data-i18n="footer_contact">Contact</a>
+    </nav>
+    <p class="footer__legal"><span data-i18n="footer_copy">© 2026 Factory Labs</span> · <span data-i18n="footer_req">For iPhone · iOS 17 or later</span></p>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
