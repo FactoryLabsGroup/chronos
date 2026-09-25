@@ -61,6 +61,7 @@
   .card { overflow: hidden; }
   h1 { font: 700 clamp(26px, 6vw, 34px)/1.18 var(--serif); margin: 0; letter-spacing: -0.01em; }
   .text p { margin: 12px 0 0; color: var(--ink-2); }
+  #text p:first-child { margin-top: 14px; color: var(--ink); font-weight: 500; }
   .cta { margin: 24px 0 0; text-align: center; }
   .cta p { margin: 0 0 14px; color: var(--ink-2); }
   .open {
@@ -89,6 +90,7 @@
   <article class="card" id="card" hidden>
     <img class="scene" id="scene" alt="" hidden>
     <h1 id="title"></h1>
+    <div class="text" id="text"></div>
   </article>
 
   <article class="card" id="missing" hidden>
@@ -133,12 +135,12 @@
 
   var strings = {
     en: {
-      open: 'Open in Chronos', more: 'Read the whole story in the app.',
+      open: 'Open in Chronos', more: 'Plenty more stories are waiting in Chronos.',
       missingTitle: 'This card has moved on', missingText: 'It is no longer in Chronos, but there are plenty more strange true stories waiting.',
       appleSmall: 'Download on the', googleSmall: 'Get it on'
     },
     ka: {
-      open: 'გახსენი Chronos-ში', more: 'სრულად წასაკითხად გამოიყენე აპი.',
+      open: 'გახსენი Chronos-ში', more: 'კიდევ ბევრი ამბავი გელოდება Chronos-ში.',
       missingTitle: 'ეს ბარათი აღარ არის', missingText: 'ის Chronos-ში აღარ არის, მაგრამ კიდევ ბევრი უცნაური ნამდვილი ამბავი გელოდება.',
       appleSmall: 'ჩამოტვირთე', googleSmall: 'ჩამოტვირთე'
     }
@@ -178,12 +180,16 @@
       if (!card) { show('missing'); return; }
       document.title = card.title + ' — Chronos';
       set('title', card.title);
-      // Only the scene and the title: the card itself is read in the app.
+      // The scene, the title and the card's text; its sources and labels stay in the app.
       if (/^[A-Za-z0-9]+$/.test(card.scene || '')) {
         var scene = document.getElementById('scene');
         scene.src = '../assets/scenes/' + card.scene + '.jpg';
         scene.hidden = false;
       }
+      var text = document.getElementById('text');
+      card.text.split('\n\n').forEach(function (paragraph) {
+        var p = document.createElement('p'); p.textContent = paragraph; text.appendChild(p);
+      });
       show('card');
     })
     .catch(function () { show('missing'); });
