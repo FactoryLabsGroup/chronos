@@ -57,9 +57,8 @@
     background: var(--surface); border: 1px solid var(--divider); border-radius: 24px;
     padding: 24px; box-shadow: 0 18px 50px rgba(var(--shadow), .12);
   }
-  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-  .pill { font-size: 13px; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); }
-  .pill--year { background: var(--bronze-soft); color: var(--bronze); }
+  .scene { display: block; width: calc(100% + 48px); margin: -24px -24px 20px; aspect-ratio: 1200 / 630; object-fit: cover; }
+  .card { overflow: hidden; }
   h1 { font: 700 clamp(26px, 6vw, 34px)/1.18 var(--serif); margin: 0; letter-spacing: -0.01em; }
   .text p { margin: 12px 0 0; color: var(--ink-2); }
   .cta { margin: 24px 0 0; text-align: center; }
@@ -80,7 +79,7 @@
   .store small { font-size: 12px; opacity: .85; }
   .store strong { font: 700 20px/1.15 var(--sans); }
   [hidden] { display: none !important; }
-  @media (max-width: 480px) { .card { padding: 20px; } .stores { flex-direction: column; } .store { justify-content: center; } }
+  @media (max-width: 480px) { .card { padding: 20px; } .scene { width: calc(100% + 40px); margin: -20px -20px 18px; } .stores { flex-direction: column; } .store { justify-content: center; } }
 </style>
 </head>
 <body>
@@ -88,7 +87,7 @@
   <a class="brand" href="../"><img src="../assets/apple-touch-icon.png" alt="">Chronos</a>
 
   <article class="card" id="card" hidden>
-    <div class="meta"><span class="pill pill--year" id="year"></span></div>
+    <img class="scene" id="scene" alt="" hidden>
     <h1 id="title"></h1>
   </article>
 
@@ -134,12 +133,12 @@
 
   var strings = {
     en: {
-      open: 'Open in Chronos', more: 'Continue reading in the app.',
+      open: 'Open in Chronos', more: 'Read the whole story in the app.',
       missingTitle: 'This card has moved on', missingText: 'It is no longer in Chronos, but there are plenty more strange true stories waiting.',
       appleSmall: 'Download on the', googleSmall: 'Get it on'
     },
     ka: {
-      open: 'გახსენი Chronos-ში', more: 'გასაგრძელებლად გამოიყენე აპი.',
+      open: 'გახსენი Chronos-ში', more: 'სრულად წასაკითხად გამოიყენე აპი.',
       missingTitle: 'ეს ბარათი აღარ არის', missingText: 'ის Chronos-ში აღარ არის, მაგრამ კიდევ ბევრი უცნაური ნამდვილი ამბავი გელოდება.',
       appleSmall: 'ჩამოტვირთე', googleSmall: 'ჩამოტვირთე'
     }
@@ -179,8 +178,12 @@
       if (!card) { show('missing'); return; }
       document.title = card.title + ' — Chronos';
       set('title', card.title);
-      // Only the title and year: the card itself is read in the app.
-      set('year', card.year);
+      // Only the scene and the title: the card itself is read in the app.
+      if (/^[A-Za-z0-9]+$/.test(card.scene || '')) {
+        var scene = document.getElementById('scene');
+        scene.src = '../assets/scenes/' + card.scene + '.jpg';
+        scene.hidden = false;
+      }
       show('card');
     })
     .catch(function () { show('missing'); });
