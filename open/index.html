@@ -9,11 +9,15 @@
 <meta name="apple-itunes-app" content="app-id=6813354610, app-clip-bundle-id=com.factorylabs.chronos.Clip, app-clip-display=card">
 <meta name="theme-color" content="#F3ECDF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+<!-- preview:start -->
+<!-- Each card's own page (open/{lang}/{story|fact}/{id}/) gets its title and picture here,
+     written by ChronosTests/SiteContentExport.swift in the iOS project. -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chronos">
 <meta property="og:description" content="The strangest true stories in history, as short illustrated cards.">
 <meta property="og:image" content="https://factorylabs.app/chronos/assets/og-icon.jpg">
 <meta name="twitter:card" content="summary">
+<!-- preview:end -->
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -116,15 +120,17 @@
 
 <script>
 (function () {
-  // The link's own query items, exactly as the app writes them (see ChronosLink.swift).
+  // The link, exactly as the app writes it (see ChronosLink.swift): the card and its language
+  // in the path, /open/ka/story/didgori-1121/, or, on links from 1.1, in the query.
   var params = new URLSearchParams(location.search);
   var slug = /^[a-z0-9-]{1,80}$/;
-  var story = (params.get('story') || '').toLowerCase();
-  var fact = (params.get('fact') || '').toLowerCase();
+  var path = location.pathname.match(/\/open\/(ka|en)\/(story|fact)\/([a-z0-9-]{1,80})\/?$/);
+  var story = path ? (path[2] === 'story' ? path[3] : '') : (params.get('story') || '').toLowerCase();
+  var fact = path ? (path[2] === 'fact' ? path[3] : '') : (params.get('fact') || '').toLowerCase();
   story = slug.test(story) ? story : '';
   fact = slug.test(fact) ? fact : '';
 
-  var lang = params.get('lang');
+  var lang = path ? path[1] : params.get('lang');
   if (lang !== 'ka' && lang !== 'en') {
     var prefs = navigator.languages || [navigator.language || 'en'];
     lang = prefs.some(function (l) { return /^ka\b/i.test(l); }) ? 'ka' : 'en';
