@@ -61,11 +61,10 @@
   h1 { font: 700 clamp(26px, 6vw, 34px)/1.18 var(--serif); margin: 0; letter-spacing: -0.01em; }
   .text p { margin: 12px 0 0; color: var(--ink-2); }
   .cta { margin: 24px 0 0; text-align: center; }
-  .open--after { margin: 12px 0 0; }
   .cta p { margin: 0 0 14px; color: var(--ink-2); }
   .open {
     display: block; width: 100%; padding: 16px 20px; border-radius: 16px; border: 0;
-    background: var(--bronze); color: #fff; font: 600 18px/1.2 var(--sans); text-decoration: none; margin: 0 0 12px;
+    background: var(--bronze); color: #fff; font: 600 18px/1.2 var(--sans); text-decoration: none; margin: 12px 0 0;
   }
   @media (prefers-color-scheme: dark) { .open { color: #1A140C; } }
   .stores { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
@@ -108,7 +107,7 @@
         <span><small data-t="googleSmall"></small><strong>Google Play</strong></span>
       </a>
     </div>
-    <a class="open open--after" id="openClip" hidden data-t="open"></a>
+    <a class="open" id="openClip" hidden data-t="open"></a>
   </div>
 </main>
 
