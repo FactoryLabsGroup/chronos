@@ -59,12 +59,8 @@
   .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
   .pill { font-size: 13px; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); }
   .pill--year { background: var(--bronze-soft); color: var(--bronze); }
-  h1 { font: 700 clamp(26px, 6vw, 34px)/1.18 var(--serif); margin: 0 0 14px; letter-spacing: -0.01em; }
-  .text p { margin: 0 0 12px; color: var(--ink-2); }
-  .text p:first-child { color: var(--ink); font-weight: 500; }
-  .sources { margin: 18px 0 0; padding: 16px 0 0; border-top: 1px solid var(--divider); font-size: 14px; color: var(--ink-2); }
-  .sources h2 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 6px; color: var(--bronze); }
-  .sources ul { margin: 0; padding-left: 18px; }
+  h1 { font: 700 clamp(26px, 6vw, 34px)/1.18 var(--serif); margin: 0; letter-spacing: -0.01em; }
+  .text p { margin: 12px 0 0; color: var(--ink-2); }
   .cta { margin: 24px 0 0; text-align: center; }
   .cta p { margin: 0 0 14px; color: var(--ink-2); }
   .open {
@@ -91,10 +87,8 @@
   <a class="brand" href="../"><img src="../assets/apple-touch-icon.png" alt="">Chronos</a>
 
   <article class="card" id="card" hidden>
-    <div class="meta"><span class="pill pill--year" id="year"></span><span class="pill" id="category"></span><span class="pill" id="confidence"></span></div>
+    <div class="meta"><span class="pill pill--year" id="year"></span></div>
     <h1 id="title"></h1>
-    <div class="text" id="text"></div>
-    <div class="sources" id="sources"><h2 data-t="sources"></h2><ul id="sourceList"></ul></div>
   </article>
 
   <article class="card" id="missing" hidden>
@@ -139,12 +133,12 @@
 
   var strings = {
     en: {
-      sources: 'Sources', open: 'Open in Chronos', more: 'More stories like this one, every day, in Chronos.',
+      open: 'Open in Chronos', more: 'Continue reading in the app.',
       missingTitle: 'This card has moved on', missingText: 'It is no longer in Chronos, but there are plenty more strange true stories waiting.',
       appleSmall: 'Download on the', googleSmall: 'Get it on'
     },
     ka: {
-      sources: 'წყაროები', open: 'გახსენი Chronos-ში', more: 'მსგავსი ამბები ყოველდღე, Chronos-ში.',
+      open: 'გახსენი Chronos-ში', more: 'გასაგრძელებლად გამოიყენე აპი.',
       missingTitle: 'ეს ბარათი აღარ არის', missingText: 'ის Chronos-ში აღარ არის, მაგრამ კიდევ ბევრი უცნაური ნამდვილი ამბავი გელოდება.',
       appleSmall: 'ჩამოტვირთე', googleSmall: 'ჩამოტვირთე'
     }
@@ -184,18 +178,8 @@
       if (!card) { show('missing'); return; }
       document.title = card.title + ' — Chronos';
       set('title', card.title);
+      // Only the title and year: the card itself is read in the app.
       set('year', card.year);
-      set('category', card.category);
-      set('confidence', card.confidence);
-      var text = document.getElementById('text');
-      card.text.split('\n\n').forEach(function (paragraph) {
-        var p = document.createElement('p'); p.textContent = paragraph; text.appendChild(p);
-      });
-      var list = document.getElementById('sourceList');
-      card.sources.forEach(function (source) {
-        var li = document.createElement('li'); li.textContent = source; list.appendChild(li);
-      });
-      if (!card.sources.length) document.getElementById('sources').hidden = true;
       show('card');
     })
     .catch(function () { show('missing'); });
